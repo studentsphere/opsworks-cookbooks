@@ -5,5 +5,6 @@
       owner "apache"
       group "apache"
       action :create
+      recursive true
   end
 end
