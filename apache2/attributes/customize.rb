@@ -10,5 +10,3 @@
 #
 #normal[:apache][:contact] = 'you@your-site.com'
 #normal[:apache][:timeout] = 60
-
-chown -R apache:apache /srv/www/test_git/current
