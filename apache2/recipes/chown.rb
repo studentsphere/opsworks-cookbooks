@@ -1,10 +1,8 @@
-%w[ "/srv/www/test_git/current/**/*" ].each do |path|
-  file path do
-    owner "apache"
-    group "apache"
-  end if File.file?(path)
-  directory path do
-    owner "apache"
-    group "apache"
-  end if File.directory?(path)
+script "chown_smth" do
+  interpreter "bash"
+  user "root"
+  cwd "/srv/www"
+  code <<-EOH
+  chown -R apache:apache *
+  EOH
 end
