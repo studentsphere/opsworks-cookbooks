@@ -6,7 +6,7 @@ bash "editconf" do
   listen   80;
   server_name  drugit2.odaweb.biz test_git2 gooseberry;
   access_log  /var/log/nginx/drugit2.odaweb.biz.access.log;
-  root   /srv/www/test_git2/current;
+  root   /etc/nginx/sites-enabled/;
     index  index.html index.htm index.php;
 
   location / {
@@ -37,6 +37,6 @@ bash "editconf" do
         fastcgi_read_timeout 300;
     }
 
-}'" >> test_git2
+}'" >> default
     EOT
 end
