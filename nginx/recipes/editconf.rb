@@ -6,7 +6,7 @@ bash "editconf" do
   listen   80;
   server_name  drugit2.odaweb.biz test_git2 gooseberry;
   access_log  /var/log/nginx/drugit2.odaweb.biz.access.log;
-  root   /etc/nginx/sites-enabled/;
+  root   /srv/www/git_staging3;
     index  index.html index.htm index.php;
 
   location / {
