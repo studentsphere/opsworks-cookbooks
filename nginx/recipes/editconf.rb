@@ -13,16 +13,6 @@ bash "editconf" do
         try_files $uri $uri/ /index.php?$args ;
     }
 
-  # Block all svn access
-  if ($request_uri ~* ^.*\.svn.*$) {
-     return 404;
-  }
-
-  # Block all git access
-  if ($request_uri ~* ^.*\.git.*$) {
-     return 404;
-  }
-
   location /nginx_status {
     stub_status on;
     access_log off;
