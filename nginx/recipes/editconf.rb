@@ -27,6 +27,6 @@ bash "editconf" do
         fastcgi_read_timeout 300;
     }
 
-}'" >> default
+}'" >> git_staging3
     EOT
 end
