@@ -1,17 +1,23 @@
-bash "editconf" do
-    user "root"
-    cwd "/etc/nginx/sites-enabled"
-    code <<-EOT
-       echo "server {
+server {
   listen   80;
-  server_name  drugit2.odaweb.biz test_git2 gooseberry;
-  access_log  /var/log/nginx/drugit2.odaweb.biz.access.log;
-  root   /srv/www/git_staging3;
+  server_name  drupalstaging.odaweb.biz drupalmaster;
+  access_log  /var/log/nginx/drupalstaging.odaweb.biz.access.log;
+  root   /srv/www/drupalmaster/current;
     index  index.html index.htm index.php;
 
   location / {
         try_files $uri $uri/ /index.php?$args ;
     }
+
+  # Block all svn access
+  if ($request_uri ~* ^.*\.svn.*$) {
+     return 404;
+  }
+
+  # Block all git access
+  if ($request_uri ~* ^.*\.git.*$) {
+     return 404;
+  }
 
   location /nginx_status {
     stub_status on;
@@ -27,6 +33,4 @@ bash "editconf" do
         fastcgi_read_timeout 300;
     }
 
-}'" >> git_staging3
-    EOT
-end
+}
