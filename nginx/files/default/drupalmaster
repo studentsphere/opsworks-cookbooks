@@ -3,11 +3,15 @@ server {
   server_name  drupalstaging.odaweb.biz drupalmaster;
   access_log  /var/log/nginx/drupalstaging.odaweb.biz.access.log;
   root   /srv/www/drupalmaster/current;
-    index  index.html index.htm index.php;
+  
+  index  index.html index.htm index.php;
 
-  location / {
+location / {
         try_files $uri $uri/ /index.php?$args ;
-    }
+        if ($http_x_forwarded_proto != 'https') {
+            rewrite ^ https://$host$request_uri? permanent;
+}
+}
 
   # Block all svn access
   if ($request_uri ~* ^.*\.svn.*$) {
