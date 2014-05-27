@@ -10,3 +10,5 @@
 #
 #normal[:nginx][:gzip] = 'off'
 #normal[:nginx][:gzip_static] = 'off'
+
+default[:nginx][:worker_processes] = 2
