@@ -1,7 +1,7 @@
 server {
   listen   80;
-  server_name  drupalstaging.odaweb.biz drupalmaster;
-  access_log  /var/log/nginx/drupalstaging.odaweb.biz.access.log;
+  server_name  events.studentsphere.ca drupalmaster;
+  access_log  /var/log/nginx/events.studentsphere.ca.access.log;
   root   /srv/www/drupalmaster/current;
   
   index  index.html index.htm index.php;
