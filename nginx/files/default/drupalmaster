@@ -8,9 +8,6 @@ server {
 
 location / {
         try_files $uri $uri/ /index.php?$args ;
-        if ($http_x_forwarded_proto != 'https') {
-            rewrite ^ https://$host$request_uri? permanent;
-}
 }
 
   # Block all svn access
