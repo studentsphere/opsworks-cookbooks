@@ -1,0 +1,37 @@
+server {
+  listen   80;
+  server_name  drupalstaging.odaweb.biz drupalstaging;
+  access_log  /var/log/nginx/events.studentsphere.ca.access.log;
+  root   /srv/www/drupalstaging/current;
+  
+  index index.php;
+
+location / {
+        try_files $uri $uri/ /index.php?$args ;
+}
+
+  # Block all svn access
+  if ($request_uri ~* ^.*\.svn.*$) {
+     return 404;
+  }
+
+  # Block all git access
+  if ($request_uri ~* ^.*\.git.*$) {
+     return 404;
+  }
+
+  location /nginx_status {
+    stub_status on;
+    access_log off;
+    allow 127.0.0.1;
+    deny all;
+  }
+
+    location ~ \.php$ {
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_index *.php;
+        include fastcgi_params;
+        fastcgi_read_timeout 300;
+    }
+
+}
