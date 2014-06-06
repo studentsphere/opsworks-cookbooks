@@ -1,4 +1,4 @@
-cookbook_file "/etc/nginx/sites-enabled/drupalmaster" do
-  source "drupalmaster"
+cookbook_file "/etc/nginx/sites-enabled/drupalstaging" do
+  source "drupalstaging"
   mode 00644
 end
