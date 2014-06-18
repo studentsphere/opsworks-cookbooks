@@ -8,7 +8,7 @@ version          "1.3.5"
 
 recipe "newrelic-sysmond", "Install and configure newrelic-sysmond"
 
-#depends "apt", ">= 1.9.2"
+depends "apt", ">= 1.9.2"
 
 supports "debian"
 supports "ubuntu"
