@@ -9,7 +9,7 @@
 # BASIC CONFIG
 ##############
 # license(s)
-default['newrelic']['license'] = nil
+default['newrelic']['license'] = "48cbdf4fca8cfdf47a6286e9a6a8f6cd78157349"
 default['newrelic']['server_monitoring']['license'] = node['newrelic']['license']
 default['newrelic']['application_monitoring']['license'] = node['newrelic']['license']
 default['newrelic']['plugin_monitoring']['license'] = node['newrelic']['license']
