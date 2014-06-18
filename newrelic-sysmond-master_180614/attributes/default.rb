@@ -7,7 +7,7 @@
 # Copyright 2011-2014, Phil Cohen
 #
 
-default["new_relic"]["keyserver"]      = "keyserver.ubuntu.com"
+default["new_relic"]["keyserver"]      = "48cbdf4fca8cfdf47a6286e9a6a8f6cd78157349"
 default["new_relic"]["license_key"]    = ""
 default["new_relic"]["loglevel"]       = "info"
 default["new_relic"]["logfile"]        = "/var/log/newrelic/nrsysmond.log"
