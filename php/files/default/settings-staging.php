@@ -220,7 +220,7 @@ $databases = array (
  array (
    'default' =>
    array (
-     'database' => 'eventstu_prod',
+     'database' => 'eventstu_staging',
      'username' => 'drupal_servers',
      'password' => '$Tj/s9RpewKRhoyq2KAuFpBR',
      'host' => 'myssdbinstance.cdahsh1kqpns.us-east-1.rds.amazonaws.com',
