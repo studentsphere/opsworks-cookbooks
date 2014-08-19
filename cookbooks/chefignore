@@ -1,0 +1,6 @@
+dockerconfig/*
+automation*
+Dockerfile*
+start.sh*
+startinsidedocker.sh*
+supervisord.conf*
