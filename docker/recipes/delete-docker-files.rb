@@ -13,8 +13,6 @@ end
 file "/srv/www/drupalstaging/current/startinsidedocker.sh" do
   action :delete
 end
-
-file "/srv/www/drupalstaging/current/supervisord.conf
-" do
+file "/srv/www/drupalstaging/current/supervisord.conf" do
   action :delete
 end
