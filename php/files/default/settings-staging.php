@@ -283,7 +283,7 @@ $drupal_hash_salt = 'CtLacb9HQZbF-zB4NgAMCyiX8ccDCYYScBf2jynT8hc';
  * It is not allowed to have a trailing slash; Drupal will add it
  * for you.
  */
-$base_url = "https://events.studentsphere.ca";  // NO trailing slash!
+$base_url = "http://drupalstaging.odaweb.biz/";  // NO trailing slash!
 $conf['file_temporary_path'] = '/tmp';
 
 /**
