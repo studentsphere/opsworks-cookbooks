@@ -1,6 +1,6 @@
 server {
   listen   80;
-  server_name  drupalstaging.odaweb.biz drupalstaging;
+  server_name  staging.events.studentsphere.ca drupalstaging;
   access_log  /var/log/nginx/access.log;
   error_log /var/log/nginx/error.log; 
   root   /srv/www/drupalstaging/current;
