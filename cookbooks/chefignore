@@ -1,6 +1,0 @@
-/srv/www/drupalstaging/current/dockerconfig/*
-/srv/www/drupalstaging/current/automation
-/srv/www/drupalstaging/current/Dockerfile
-/srv/www/drupalstaging/current/start.sh
-/srv/www/drupalstaging/current/startinsidedocker.sh
-/srv/www/drupalstaging/current/supervisord.conf
