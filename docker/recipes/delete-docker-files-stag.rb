@@ -1,9 +1,6 @@
 file "/srv/www/drupalstaging/current/dockerconfig/*" do
   action :delete
 end
-file "/srv/www/drupalstaging/current/automation" do
-  action :delete
-end
 file "/srv/www/drupalstaging/current/Dockerfile" do
   action :delete
 end
