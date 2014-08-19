@@ -1,17 +1,14 @@
 server {
   listen   80;
-  server_name  events.studentsphere.ca drupalmaster;
+  server_name  drupalstaging.odaweb.biz drupalstaging;
   access_log  /var/log/nginx/access.log;
   error_log /var/log/nginx/error.log; 
-  root   /srv/www/drupalmaster/current;
+  root   /srv/www/drupalstaging/current;
   
   index index.php;
 
 location / {
         try_files $uri $uri/ /index.php?$args ;
-        if ($http_x_forwarded_proto != 'https') {
-            rewrite ^ https://$host$request_uri? permanent;
-}
 }
 
   # Block all svn access
