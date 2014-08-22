@@ -9,7 +9,7 @@ server {
 
 location / {
 	auth_basic  "Authorized personnel only.";
- 	auth_basic_user_file  /path/to/htpasswd;
+ 	auth_basic_user_file  /srv/.htpasswd;
         try_files $uri $uri/ /index.php?$args ;
 }
 
