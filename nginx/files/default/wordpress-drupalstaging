@@ -1,0 +1,77 @@
+server {
+listen 80;
+    server_name odaweb.biz;
+    access_log  /var/log/nginx/wordpress.access.log;
+    error_log /var/log/nginx/wordpress.error.log;
+    root /srv/www/wordpress/current;
+
+    index index.php;
+
+location / {
+        try_files $uri $uri/ /index.php?$args ;
+}
+
+  # Block all svn access
+  if ($request_uri ~* ^.*\.svn.*$) {
+     return 404;
+  }
+
+  # Block all git access
+  if ($request_uri ~* ^.*\.git.*$) {
+     return 404;
+  }
+
+  location /nginx_status {
+    stub_status on;
+    access_log off;
+    allow 127.0.0.1;
+    deny all;
+  }
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_index *.php;
+        include fastcgi_params;
+        fastcgi_read_timeout 350;
+    }
+
+}
+
+server {
+  listen   80;
+  server_name  staging.events.studentsphere.ca drupalstaging;
+  access_log  /var/log/nginx/staging.access.log;
+  error_log /var/log/nginx/staging.error.log; 
+  root   /srv/www/drupalstaging/current;
+  
+location / {
+  auth_basic  "Authorized personnel only.";
+  auth_basic_user_file  /srv/.htpasswd;
+        try_files $uri $uri/ /index.php?$args ;
+}
+
+  # Block all svn access
+  if ($request_uri ~* ^.*\.svn.*$) {
+     return 404;
+  }
+
+  # Block all git access
+  if ($request_uri ~* ^.*\.git.*$) {
+     return 404;
+  }
+
+  location /nginx_status {
+    stub_status on;
+    access_log off;
+    allow 127.0.0.1;
+    deny all;
+  }
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_index *.php;
+        include fastcgi_params;
+        fastcgi_read_timeout 350;
+    }
+
+}
