@@ -1,0 +1,36 @@
+server {
+  listen   80;
+  server_name  wordpress_test poseidon;
+  access_log  /var/log/nginx/wordpress_test.access.log;
+  error_log /var/log/nginx/wordpress_test.error.log;
+  root   /srv/www/wordpress_test/current;
+
+index           index.php;
+
+  location / {
+     try_files   $uri $uri/ /index.php?$query_string;
+  }
+
+  # Block all svn access
+  if ($request_uri ~* ^.*\.svn.*$) {
+     return 404;
+  }
+
+  # Block all git access
+  if ($request_uri ~* ^.*\.git.*$) {
+     return 404;
+  }
+
+  location /nginx_status {
+    stub_status on;
+    access_log off;
+    allow 127.0.0.1;
+    deny all;
+  }
+      location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php5-fpm.sock;
+        fastcgi_index *.php;
+        include fastcgi_params;
+        fastcgi_read_timeout 350;
+    }
+}
