@@ -43,6 +43,8 @@ server {
   access_log  /var/log/nginx/staging.access.log;
   error_log /var/log/nginx/staging.error.log; 
   root   /srv/www/drupalstaging/current;
+
+    index index.php;
   
 location / {
   auth_basic  "Authorized personnel only.";
