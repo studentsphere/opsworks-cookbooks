@@ -8,8 +8,6 @@ server {
   index index.php;
 
 location / {
-	auth_basic  "Authorized personnel only.";
- 	auth_basic_user_file  /srv/.htpasswd;
         try_files $uri $uri/ /index.php?$args ;
 }
 
