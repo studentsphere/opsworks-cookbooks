@@ -1,7 +1,7 @@
-script "drush-cc-all-startup" do
+script "snmp-mibs-downloader" do
   interpreter "bash"
   user "root"
-  cwd "/srv/www/drupalstaging/current"
+  cwd "/srv/www"
   code <<-EOH
   apt-get install snmp-mibs-downloader
   EOH
