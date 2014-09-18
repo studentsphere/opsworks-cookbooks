@@ -3,6 +3,6 @@ script "snmp-mibs-downloader" do
   user "root"
   cwd "/srv/www"
   code <<-EOH
-  apt-get install snmp-mibs-downloader
+  apt-get install snmp-mibs-downloader -y
   EOH
 end
