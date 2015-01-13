@@ -5,8 +5,4 @@
 # "ruby/attributes/customize.rb" in your cookbook repository and
 # put the overrides in YOUR customize.rb file.
 ###
-{
-  "opsworks": {
-    "ruby_version": "2.1.0"
-  }
-}
+
